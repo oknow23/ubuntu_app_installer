@@ -1,0 +1,101 @@
+{
+    "languageserver": {
+        "ccls": {
+            "command": "/home/user/workspaces/c/opensource/ccls/ccls",
+            "rootPatterns": [
+                "compile_commands.json",
+                ".ccls"
+            ],
+            "filetypes": [
+                "c",
+                "cpp",
+                "cuda",
+                "objc",
+                "objcpp"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                },
+                "clang": {
+                    "excludeArgs": [
+                        "-m*",
+                        "-Wa*",
+                        "-f*"
+                    ],
+                    "extraArgs": []
+                }
+            }
+        },
+        "golang": {
+            "command": "gopls",
+            "args": [],
+            "rootPatterns": [
+                "go.mod",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ]
+        },
+        "bingo": {
+            "command": "bingo",
+            "args": [
+                "--diagnostics-style=instant",
+                "--format-style=goimports"
+            ],
+            "rootPatterns": [
+                "go.mod",
+                ".git/"
+            ],
+            "filetypes": [
+                "ago"
+            ]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh",
+                "zsh"
+            ]
+        }
+    },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python"
+    ],
+    "coc.preferences.rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim",
+        ".git",
+        ".hg"
+    ],
+    "suggest.timeout": 5000,
+    "suggest.noselect": false,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "javascript": "javascriptreact",
+        "vue": "html"
+    },
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.pylintArgs": [
+        "--rcfile=./.pylintrc",
+        "--disable=C0330"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "80",
+        "--skip-string-normalization"
+    ],
+    "python.formatting.yapfArgs": [
+        "--style",
+        "google"
+    ]
+}
