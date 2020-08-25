@@ -31,17 +31,21 @@ sudo apt update
 sudo dpkg --add-architecture i386
 sudo apt install -y --no-install-recommends --allow-unauthenticated \
     software-properties-common \
-    python-software-properties python-pip python-dev \
+    python-pip python-dev \
     python3-software-properties python3-dev python3-pip \
     build-essential libncurses5-dev libncursesw5-dev \
     silversearcher-ag \
-    wget zsh net-tools iputils-ping samba \
+    npm autoconf autogen libncursesw5-dev \
+    wget curl zsh net-tools iputils-ping samba \
     file bc mtd-utils fakeroot cpio unzip rsync \
     bzr cvs mercurial subversion neovim gparted \
     gdb exuberant-ctags cscope netcat-openbsd socat psmisc libc6-dbg \
     automake libtool pkg-config libpcre3-dev zlib1g-dev liblzma-dev \
-    libtool-bin strace git-flow tig libc6:i386 zlib1g:i386 golang-${GOLANG_VERSION}.go \
+    libtool-bin strace git-flow tig libc6:i386 zlib1g:i386 
     u-boot-tools genext2fs || echo "Fail! will exit";return
+
+sudo  apt install -y --no-install-recommends --allow-unauthenticated \
+    golang-${GOLANG_VERSION}.go || echo "Fail! will exit";return
 # sudo apt install -y oracle-java8-installer patch patchutils libc6-dev \
 #     libxml-dom-perl zlib1g zlib1g-dev libcurl4-openssl-dev \
 #     libncursesw5-dev libncurses5:i386
