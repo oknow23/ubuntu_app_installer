@@ -35,6 +35,7 @@ sudo apt install -y --no-install-recommends --allow-unauthenticated \
     python3-software-properties python3-dev python3-pip \
     build-essential libncurses5-dev libncursesw5-dev \
     silversearcher-ag \
+    docker.io ssh openssh-server \
     npm autoconf autogen libncursesw5-dev \
     wget curl zsh net-tools iputils-ping samba \
     file bc mtd-utils fakeroot cpio unzip rsync \
@@ -49,6 +50,11 @@ sudo  apt install -y --no-install-recommends --allow-unauthenticated \
 # sudo apt install -y oracle-java8-installer patch patchutils libc6-dev \
 #     libxml-dom-perl zlib1g zlib1g-dev libcurl4-openssl-dev \
 #     libncursesw5-dev libncurses5:i386
+
+# install docker compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || echo "Fail! will exit";return
